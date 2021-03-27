@@ -18,5 +18,19 @@ task("accounts", "Prints the list of accounts", async () => {
  */
 module.exports = {
   solidity: "0.8.0",
+  networks: {
+    hardhat: {
+      forking: {
+        url: "https://kovan3.arbitrum.io/rpc"
+      }
+    }
+  },
+  settings: {
+    // See the solidity docs for advice about optimization and evmVersion
+    optimizer: {
+      enabled: true,
+      runs: 200,
+    },
+  }
 };
 
